@@ -7,7 +7,9 @@ import { cloudflare } from "@cloudflare/vite-plugin";
 
 export default defineConfig(({mode}) => {
   const env = loadEnv(mode, '.', '');
+  const isGitHubActions = process.env.GITHUB_ACTIONS === 'true';
   return {
+    base: isGitHubActions ? '/DOT-AUDIT-PRO/' : '/',
     plugins: [react(), tailwindcss(), cloudflare()],
     define: {
       'process.env.GEMINI_API_KEY': JSON.stringify(env.GEMINI_API_KEY),
