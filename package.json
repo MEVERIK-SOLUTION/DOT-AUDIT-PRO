@@ -6,6 +6,8 @@
   "scripts": {
     "dev": "tsx server.ts",
     "build": "vite build && esbuild server.ts --bundle --platform=node --format=cjs --outfile=dist/server.cjs --external:vite --external:express --external:path --external:url",
+    "build:pages": "VITE_GITHUB_PAGES=true vite build",
+    "postbuild:pages": "cp dist/index.html dist/404.html",
     "preview": "npm run build && wrangler dev",
     "clean": "rm -rf dist",
     "lint": "tsc --noEmit",

@@ -8,8 +8,11 @@ import { cloudflare } from "@cloudflare/vite-plugin";
 export default defineConfig(({mode}) => {
   const env = loadEnv(mode, '.', '');
   const isGitHubActions = process.env.GITHUB_ACTIONS === 'true';
+  const isGitHubPages = process.env.VITE_GITHUB_PAGES === 'true';
+  const repository = process.env.GITHUB_REPOSITORY?.split('/')[1] || 'DOT-AUDIT-PRO';
+  const base = isGitHubActions || isGitHubPages ? `/${repository}/` : '/';
   return {
-    base: isGitHubActions ? '/DOT-AUDIT-PRO/' : '/',
+    base,
     plugins: [react(), tailwindcss(), cloudflare()],
     define: {
       'process.env.GEMINI_API_KEY': JSON.stringify(env.GEMINI_API_KEY),
