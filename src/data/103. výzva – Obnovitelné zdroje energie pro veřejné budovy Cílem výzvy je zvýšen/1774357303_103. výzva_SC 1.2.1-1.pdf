@@ -1,0 +1,14 @@
+<!doctype html>
+<html>
+  <head>
+    <link rel="stylesheet" href="chrome-extension://mhjfbmdgcfjbbpaeojofohoefgiehjai/pdf_embedder.css">
+  </head>
+  <body>
+    <template shadowrootmode="closed">
+      <link rel="stylesheet" href="chrome-extension://mhjfbmdgcfjbbpaeojofohoefgiehjai/pdf_embedder.css">
+      <iframe name="6C9B7A75DCDA1E201C0723670A201FEC" src="about:blank" type="application/pdf" internalid="6C9B7A75DCDA1E201C0723670A201FEC"
+          allow="fullscreen *"></iframe>
+      <slot></slot>
+    </template>
+  </body>
+</html>
