@@ -1,0 +1,9 @@
+{
+  "name": "Dot-AUDIT PRO",
+  "description": "Profesionální nástroj pro precizní auditování a validaci projektových záměrů OPŽP. WHC s.r.o., jsme operační systém vašich projektů.",
+  "requestFramePermissions": [
+    "camera",
+    "microphone",
+    "geolocation"
+  ]
+}
