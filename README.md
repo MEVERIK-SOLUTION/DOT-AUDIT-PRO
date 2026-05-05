@@ -14,6 +14,9 @@ Use these settings in Cloudflare Pages:
 - Root directory: `/`
 - Do not set a deploy command
 
+If a deploy command is configured in the Cloudflare dashboard (for example `npx wrangler deploy`), remove it.
+Pages should only run the build command and publish `dist`.
+
 Required runtime variable for Pages Functions:
 
 - `HLIDAC_STATU_TOKEN` (optional, risk endpoint falls back gracefully when missing)
